@@ -1,0 +1,261 @@
+.header {
+  background: #252129;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+
+  @media screen and (min-width: 992px) {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 96px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #433c48;
+    }
+  }
+
+  &__top {
+    padding: 18px 0 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    @media screen and (min-width: 992px) {
+      padding: 23px 0 30px 0;
+      row-gap: 50px;
+    }
+  }
+
+  &__logo {
+    max-width: 163px;
+    width: 100%;
+  }
+
+  &__burger {
+    justify-self: end;
+    align-items: center;
+    display: flex;
+
+    @media screen and (min-width: 992px) {
+      display: none;
+      order: 1;
+    }
+  }
+
+  &__icon-svg {
+    fill: #fff;
+    width: 31px;
+    height: 32px;
+    transition: 0.25ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      fill: #a461d2;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    order: 4;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 400px;
+    left: -100%;
+    height: 100%;
+    min-height: calc(100vh - 79px);
+    background-color: #252129;
+    width: 100%;
+    z-index: 1001;
+    box-sizing: border-box;
+    padding: 15px;
+    transition: left 0.6s;
+
+    &.active {
+      left: 0;
+      overflow-y: scroll;
+    }
+
+    @media screen and (min-width: 992px) {
+      grid-column: initial;
+      order: 1;
+      position: initial;
+      min-height: initial;
+      flex-direction: initial;
+      padding: 0 0 0 0;
+      background: transparent;
+      justify-content: flex-end;
+    }
+  }
+
+  &__search {
+    background: #18151a;
+    max-width: 340px;
+    width: 100%;
+    padding: 10px 20px 10px 25px;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+
+    &:hover {
+      .header__loupe {
+        transition: 0.25s ease-in-out;
+        fill: #fff;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      max-width: 415px;
+    }
+  }
+
+  &__loupe {
+    margin-right: 15px;
+    fill: rgb(134, 117, 148);
+    height: 28px;
+    width: 28px;
+  }
+
+  &__input {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgb(134, 117, 148);
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &__loop {
+    margin-right: 15px;
+  }
+
+  &__buttons {
+    display: flex;
+    max-width: 340px;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: end;
+
+    @media screen and (min-width: 992px) {
+      margin-top: 0;
+    }
+  }
+
+  &__butoon {
+    max-width: 160px;
+    width: 100%;
+    min-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_reg {
+      @include buttonHover;
+      margin: 0 9px 0 0;
+
+      @media screen and (min-width: 992px) {
+        margin: 0 9px;
+      }
+    }
+
+    &_log {
+      @include buttonHoverPink;
+    }
+  }
+}
+.navigation {
+  grid-column: 1 / -1;
+  order: 3;
+  display: block;
+  position: absolute;
+  top: 98%;
+  left: -100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #252129;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 25px 15px;
+  transition: left 0.6s;
+
+  &.active {
+    left: 0;
+    overflow-y: scroll;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #433c48;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    position: initial;
+    min-height: initial;
+    background: transparent;
+    padding: 0 0 0 0;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    @media screen and (min-width: 992px) {
+      flex-direction: initial;
+      justify-content: end;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 992px) {
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 50px;
+
+        @media screen and (min-width: 1200px) {
+          margin-right: 75px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      color: #ffb400;
+    }
+
+    &_active {
+      color: #ffb400;
+    }
+  }
+}

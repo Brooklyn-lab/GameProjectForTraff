@@ -1,0 +1,262 @@
+.games {
+  background: #252129;
+  padding: 45px 0 50px;
+
+  @media screen and (min-width: 992px) {
+    padding: 0 0 90px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 45px 0 90px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__btns {
+    display: flex;
+    margin: 25px 0 45px;
+
+    @media screen and (min-width: 1200px) {
+      margin: 50px 0 45px;
+    }
+  }
+
+  &__btn {
+    font-size: 16px;
+    color: #a28fb2;
+    cursor: pointer;
+    position: relative;
+    transition: 0.25s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @media screen and (min-width: 992px) {
+        margin-right: 100px;
+      }
+    }
+
+    &.active {
+      color: #fff;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 105%;
+        height: 2px;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -15px;
+        background: #ffa008;
+      }
+    }
+  }
+
+  &__cards {
+    position: relative;
+    max-width: 1530px;
+    width: 100%;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: #3f3a47;
+      top: -30px;
+      left: 0;
+    }
+  }
+}
+.card {
+  position: relative;
+  min-width: 260px;
+  width: 100%;
+  background: #18151a;
+  padding: 0 0 30px 0;
+  transition: opacity 0.5s ease-in-out;
+
+  @media screen and (min-width: 992px) {
+    max-width: 375px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    .card__pic {
+      opacity: 0.8;
+    }
+
+    .card__button {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    position: relative;
+  }
+
+  &__discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 35px solid transparent;
+    border-top: 30px solid #e52f44;
+    border-right: 40px solid #e52f44;
+    z-index: 1000;
+
+    &::before {
+      position: absolute;
+      content: '-70%';
+      bottom: 0;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__button {
+    width: 50%;
+    max-width: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    &:first-child {
+      @include buttonHoverPink;
+    }
+
+    &:last-child {
+      @include buttonHover;
+    }
+  }
+
+  &__about {
+    padding: 0 15px;
+
+    @media screen and (min-width: 992px) {
+      padding: 0 25px;
+    }
+  }
+
+  &__name {
+    font-size: 17px;
+    color: #fff;
+    font-weight: 700;
+    margin: 25px 0 10px;
+  }
+
+  &__raiting {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    position: relative;
+    align-items: end;
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -20px;
+      width: 100%;
+      height: 1px;
+      background: #3f3a47;
+    }
+
+    @media screen and (min-width: 992px) {
+      flex-direction: initial;
+      justify-content: space-between;
+    }
+  }
+
+  &__stars {
+    padding-top: 4px;
+  }
+
+  &__star {
+    width: 18px;
+    height: 18px;
+    fill: #ffb400;
+
+    &:last-child {
+      fill: none;
+      stroke: #ffb400;
+      stroke-width: 7%;
+    }
+  }
+
+  &__new {
+    color: #ff6c84;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__old {
+    font-size: 14px;
+    color: #a28fb2;
+    margin-right: 10px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: 7px;
+      width: 100%;
+      height: 1px;
+      background: #a28fb2;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #a28fb2;
+  }
+}
+
+.games__cards .slick-arrow {
+  display: none;
+}
+.games__cards .slick-dots {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: -60px;
+  height: 0;
+  width: 0;
+}
+.games__cards .slick-dots li {
+  list-style: none;
+}
+.games__cards .slick-dots button {
+  font-size: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.18;
+  margin-right: 2px;
+
+  &:focus {
+    outline: none;
+  }
+}
+.games__cards .slick-dots li.slick-active button {
+  background: #8a7a98;
+  opacity: 1;
+}

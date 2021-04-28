@@ -1,0 +1,77 @@
+//---------- подключение шрифтов -------------
+
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@mixin buttonHover {
+  background: linear-gradient(90deg, rgba(255, 115, 20, 1) 0%, rgba(255, 182, 2, 1) 100%);
+  font-size: 14px;
+  font-family: 'Lato';
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5ms ease-in-out;
+  z-index: 1000;
+  position: relative;
+  max-width: 290px;
+  min-height: 47px;
+
+  &::before {
+    content: '';
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 115, 20, 1);
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1000;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+@mixin buttonHoverPink {
+  background: linear-gradient(90deg, rgba(102, 68, 128, 1) 0%, rgba(188, 100, 196, 1) 100%);
+  font-size: 14px;
+  font-family: 'Lato';
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.5ms ease-in-out;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #664480;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1000;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}

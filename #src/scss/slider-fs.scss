@@ -1,0 +1,307 @@
+.presentation {
+  &__slider {
+    min-width: 0;
+    position: relative;
+    margin-top: 72px;
+
+    @media screen and (min-width: 992px) {
+      margin-top: 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 45px 0 80px;
+    background: url('../img/header-bg-320.jpg') no-repeat center/cover;
+
+    @media screen and (min-width: 768px) {
+      background: url('../img/header-bg.jpg') no-repeat center/cover;
+    }
+
+    @media screen and (min-width: 992px) {
+      padding: 100px 0 160px;
+    }
+  }
+
+  &__wrapper {
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      max-width: 590px;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 992px) {
+      text-align: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      margin: 0 0 0 0;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 992px) {
+      font-size: 90px;
+      line-height: 1;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 992px) {
+      font-size: 50px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 0 10px;
+    color: rgb(196, 178, 211);
+
+    @media screen and (min-width: 768px) {
+      padding: 0 25px;
+    }
+
+    @media screen and (min-width: 992px) {
+      padding: 0 0 0 0;
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    @include buttonHover;
+    display: flex;
+    margin: 0 auto;
+    max-width: 190px;
+    width: 100%;
+    min-height: 45px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    @media screen and (min-width: 992px) {
+      margin: 30px 0 0 0;
+    }
+  }
+}
+.slick-list {
+  overflow: hidden;
+}
+.slick-track {
+  display: flex;
+}
+.slick-slide {
+  &:focus {
+    outline: none;
+  }
+}
+.presentation__slider .slick-arrow {
+  display: none;
+}
+.presentation__slider .slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%);
+
+  @media screen and (min-width: 992px) {
+    justify-content: end;
+    bottom: 70px;
+    left: 4%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 3%;
+  }
+
+  @media screen and (min-width: 1560px) {
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+.presentation__slider .slick-dots li {
+  list-style: none;
+}
+.presentation__slider .slick-dots button {
+  font-size: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.18;
+  margin-right: 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
+.presentation__slider .slick-dots li.slick-active button {
+  background: #ffb400;
+  opacity: 1;
+}
+
+.slick-dots button {
+  cursor: pointer;
+}
+
+//-------------- Cards ----------------
+
+.presentation {
+  background: #252129;
+  &__container {
+    padding: 0 0 0 0;
+
+    @media screen and (min-width: 1200px) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 992px) {
+    flex-direction: initial;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 9px 16px 9px 13px;
+    display: flex;
+    background: #18151a;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+    bottom: 0;
+
+    @media screen and (min-width: 576px) {
+      padding: 12.5px 20px;
+    }
+
+    @media screen and (min-width: 992px) {
+      padding: 35px 20px 33px;
+      bottom: 50px;
+      max-width: 500px;
+      margin: 0 0 0 0;
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding: 35px 50px 33px;
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #9c60d7;
+      transition: all 0.65s;
+    }
+
+    &:hover::before {
+      width: 100%;
+      left: 0;
+    }
+
+    &:first-child {
+      padding-top: 22.5px;
+
+      @media screen and (min-width: 768px) {
+        padding-top: 35px;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 22.5px;
+
+      @media screen and (min-width: 768px) {
+        padding-bottom: 42px;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 15px;
+    fill: #936eb0;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 25px;
+    }
+
+    &_delivery {
+      width: 44px;
+      height: 44px;
+
+      @media screen and (min-width: 768px) {
+        width: 73px;
+        height: 73px;
+      }
+    }
+
+    &_money {
+      width: 37px;
+      height: 45px;
+
+      @media screen and (min-width: 768px) {
+        width: 71px;
+        height: 71px;
+      }
+    }
+
+    &_price-tag {
+      width: 40px;
+      height: 50px;
+
+      @media screen and (min-width: 768px) {
+        width: 78px;
+        height: 78px;
+      }
+    }
+  }
+  &__text {
+    font-size: 14px;
+    color: rgb(196, 178, 211);
+    font-weight: 400;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    max-width: 230px;
+    width: 100%;
+  }
+
+  &__text-title {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 5px;
+    }
+  }
+}

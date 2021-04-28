@@ -1,0 +1,81 @@
+<div class="popups">
+  <div class="popup" id="popup_reg">
+    <div class="popup__body">
+      <div class="popup__content">
+        <form class="popup__form">
+          <svg class="popup__close">
+            <use xlink:href="img/icons.svg#close" />
+          </svg>
+          <div class="popup__title">Create Account</div>
+          <input
+            type="text"
+            class="popup__input"
+            required=""
+            name="lastname"
+            placeholder="Username"
+          />
+          <input
+            type="email"
+            class="popup__input"
+            autocomplete="off"
+            required=""
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            id="lastpassword_reg"
+            type="password"
+            class="popup__input"
+            required
+            autocomplete="off"
+            name="password"
+            placeholder="********"
+          />
+          <div class="popup__wrapper">
+            <input type="submit" id="sabmit_reg" class="popup__butt" value="Register" />
+            <div class="popup__link-wrapp">
+              <span class="popup__question">Have Account?</span>
+              <a class="popup__link" id="login_pop" href="#">Login Here</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popup_login">
+    <div class="popup__body">
+      <div class="popup__content">
+        <form class="popup__form">
+          <svg class="popup__close">
+            <use xlink:href="img/icons.svg#close" />
+          </svg>
+          <div class="popup__title">Sign In</div>
+          <input
+            type="text"
+            class="popup__input"
+            required=""
+            name="lastname"
+            placeholder="Username or Email"
+          />
+          <input
+            id="lastpassword_log"
+            type="password"
+            class="popup__input"
+            required
+            autocomplete="off"
+            name="password"
+            placeholder="********"
+          />
+          <div class="popup__wrapper">
+            <input type="submit" id="sabmit_log" class="popup__butt" value="Login" />
+            <div class="popup__link-wrapp">
+              <span class="popup__question">No Account?</span>
+              <a class="popup__link" id="registration_pop" href="#">Register Here</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
